@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF8C42;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B35;
+}
+
+/* Custom utility classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .card {
+    @apply bg-gray-900 rounded-lg shadow-md p-6 border border-gray-800;
+  }
+}
+
+/* Dark Delivery Theme Styling */
+/* Hero background uses an Unsplash food image with a dark overlay for readability */
+.hero-gradient {
+  background-image: linear-gradient(rgba(15,15,15,0.55), rgba(15,15,15,0.35)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Glass card used on forms so they stand out over the hero image */
+.form-glass {
+  background-color: rgba(17,17,17,0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.food-card-hover:hover {
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+}
+
+.badge-success {
+  @apply bg-green-900 text-green-200;
+}
+
+.badge-warning {
+  @apply bg-orange-900 text-orange-200;
+}
+
+.badge-danger {
+  @apply bg-red-900 text-red-200;
+}
+
+/* Button Styles */
+.btn-yellow-accent {
+  @apply bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary transition duration-300;
+}
+
+.text-primary-red {
+  color: #FF8C42;
+}
+
+.text-secondary-yellow {
+  color: #FFD700;
+}
+
+/* Dark Mode Utilities */
+.dark-bg {
+  background-color: #0f0f0f;
+}
+
+.dark-card {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+.dark-input {
+  @apply bg-gray-900 border border-gray-700 text-white placeholder-gray-500;
+}
+
+/* Simple Animations for better UX */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.96); opacity: 0; }
+  60% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 520ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+.animate-pop {
+  animation: popIn 420ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+.animate-slide-down {
+  animation: slideDown 420ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+/* Stagger utilities */
+.stagger-1 { animation-delay: 80ms; }
+.stagger-2 { animation-delay: 160ms; }
+.stagger-3 { animation-delay: 240ms; }
+.stagger-4 { animation-delay: 320ms; }
+
+/* Hover micro-interactions */
+.hover-pop:hover { transform: translateY(-4px) scale(1.01); transition: transform 220ms; }
+
