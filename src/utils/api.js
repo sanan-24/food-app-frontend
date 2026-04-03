@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = "https://food-app-backend-silk.vercel.app/api" //process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 // Set base URL
 axios.defaults.baseURL = API_URL;
